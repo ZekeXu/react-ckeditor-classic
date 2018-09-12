@@ -4,6 +4,9 @@ const htmlWebpackPlugin = new HtmlWebpackPlugin({
   template: path.join(__dirname, "examples/index.html"),
   filename: "./index.html"
 });
+const {
+  styles
+} = require('@ckeditor/ckeditor5-dev-utils');
 
 module.exports = {
   entry: {
@@ -20,9 +23,33 @@ module.exports = {
         exclude: /node_modules/
       },
       {
-        test: /\.css$/,
-        use: ["style-loader", "css-loader"]
+        // Or /ckeditor5-[^/]+\/theme\/icons\/[^/]+\.svg$/ if you want to limit this loader
+        // to CKEditor 5 icons only.
+        test: /\.svg$/,
+
+        use: ['raw-loader']
       },
+      {
+        // Or /ckeditor5-[^/]+\/theme\/[^/]+\.css$/ if you want to limit this loader
+        // to CKEditor 5 theme only.
+        test: /\.css$/,
+        use: [{
+            loader: 'style-loader',
+            options: {
+              singleton: true
+            }
+          },
+          {
+            loader: 'postcss-loader',
+            options: styles.getPostCssConfig({
+              themeImporter: {
+                themePath: require.resolve('@ckeditor/ckeditor5-theme-lark')
+              },
+              minify: true
+            })
+          },
+        ]
+      }
     ]
   },
   plugins: [htmlWebpackPlugin],

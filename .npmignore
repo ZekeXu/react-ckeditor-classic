@@ -2,7 +2,5 @@ src
 examples
 .babelrc
 .gitignore
-webpack.config.js
 webpack.dev.js
-yarn.lock
 yarn-error.log
