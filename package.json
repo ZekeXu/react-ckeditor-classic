@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "react ckeditor5",
   "main": "lib/index.js",
+  "module": "lib/index.js",
   "scripts": {
     "start": "webpack-dev-server --mode development --config webpack.dev.js",
     "transpile": "rm -rf lib && babel src -d lib",
