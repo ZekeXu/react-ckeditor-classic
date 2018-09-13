@@ -80,12 +80,6 @@
     lodash "^4.17.10"
     to-fast-properties "^2.0.0"
 
-"@ckeditor/ckeditor-cloud-services-core@^1.0.0":
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/@ckeditor/ckeditor-cloud-services-core/-/ckeditor-cloud-services-core-1.0.0.tgz#d0cdd60a1342e6a531ce40f41a5db7e40353f7cf"
-  dependencies:
-    "@ckeditor/ckeditor5-utils" "^10.0.0"
-
 "@ckeditor/ckeditor5-adapter-ckfinder@^10.0.2":
   version "10.0.2"
   resolved "https://registry.yarnpkg.com/@ckeditor/ckeditor5-adapter-ckfinder/-/ckeditor5-adapter-ckfinder-10.0.2.tgz#03527025188c8738585d6943de1006348fce5ea6"
@@ -133,14 +127,6 @@
     "@ckeditor/ckeditor5-core" "^11.0.0"
     "@ckeditor/ckeditor5-engine" "^10.2.0"
 
-"@ckeditor/ckeditor5-cloud-services@^10.0.2":
-  version "10.0.2"
-  resolved "https://registry.yarnpkg.com/@ckeditor/ckeditor5-cloud-services/-/ckeditor5-cloud-services-10.0.2.tgz#54052fb026a91bce35a0faa6fed83ae6c8927e31"
-  dependencies:
-    "@ckeditor/ckeditor-cloud-services-core" "^1.0.0"
-    "@ckeditor/ckeditor5-core" "^11.0.0"
-    "@ckeditor/ckeditor5-utils" "^10.2.0"
-
 "@ckeditor/ckeditor5-core@^11.0.0":
   version "11.0.0"
   resolved "https://registry.yarnpkg.com/@ckeditor/ckeditor5-core/-/ckeditor5-core-11.0.0.tgz#bd0db3a3d9a0711692b7f518ae0fa839b0ab54c7"
@@ -164,16 +150,6 @@
     postcss-nesting "^6.0.0"
     shelljs "^0.8.1"
     through2 "^2.0.3"
-
-"@ckeditor/ckeditor5-easy-image@^10.0.2":
-  version "10.0.2"
-  resolved "https://registry.yarnpkg.com/@ckeditor/ckeditor5-easy-image/-/ckeditor5-easy-image-10.0.2.tgz#f2db58b5475c124c015f639ff51c4a99a7b811cb"
-  dependencies:
-    "@ckeditor/ckeditor-cloud-services-core" "^1.0.0"
-    "@ckeditor/ckeditor5-cloud-services" "^10.0.2"
-    "@ckeditor/ckeditor5-core" "^11.0.0"
-    "@ckeditor/ckeditor5-image" "^10.2.0"
-    "@ckeditor/ckeditor5-upload" "^10.0.2"
 
 "@ckeditor/ckeditor5-editor-classic@^11.0.0":
   version "11.0.0"
@@ -229,6 +205,14 @@
     "@ckeditor/ckeditor5-theme-lark" "^11.0.0"
     "@ckeditor/ckeditor5-ui" "^11.0.0"
     "@ckeditor/ckeditor5-utils" "^10.2.0"
+
+"@ckeditor/ckeditor5-highlight@^10.0.2":
+  version "10.0.2"
+  resolved "https://registry.yarnpkg.com/@ckeditor/ckeditor5-highlight/-/ckeditor5-highlight-10.0.2.tgz#d49c29036c32c57f641999140249affcfda42d2c"
+  dependencies:
+    "@ckeditor/ckeditor5-core" "^11.0.0"
+    "@ckeditor/ckeditor5-engine" "^10.2.0"
+    "@ckeditor/ckeditor5-ui" "^11.0.0"
 
 "@ckeditor/ckeditor5-image@^10.2.0":
   version "10.2.0"
@@ -309,7 +293,7 @@
     "@ckeditor/ckeditor5-ui" "^11.0.0"
     "@ckeditor/ckeditor5-utils" "^10.2.0"
 
-"@ckeditor/ckeditor5-utils@^10.0.0", "@ckeditor/ckeditor5-utils@^10.2.0":
+"@ckeditor/ckeditor5-utils@^10.2.0":
   version "10.2.1"
   resolved "https://registry.yarnpkg.com/@ckeditor/ckeditor5-utils/-/ckeditor5-utils-10.2.1.tgz#08268ddb79eddbb2b62acd4d2e04935b2dc75cc6"
   dependencies:
@@ -5974,7 +5958,7 @@ uglify-js@3.4.x:
     commander "~2.17.1"
     source-map "~0.6.1"
 
-uglifyjs-webpack-plugin@^1.2.4, uglifyjs-webpack-plugin@^1.3.0:
+uglifyjs-webpack-plugin@^1.2.4:
   version "1.3.0"
   resolved "https://registry.yarnpkg.com/uglifyjs-webpack-plugin/-/uglifyjs-webpack-plugin-1.3.0.tgz#75f548160858163a08643e086d5fefe18a5d67de"
   dependencies:

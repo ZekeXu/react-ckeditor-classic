@@ -26,20 +26,27 @@ class ReactEditor extends PureComponent {
   }
 
   initializeEditor() {
-    ClassicEditor.create(this.editorRef.current, editorConfig)
+    const { data, config, onChange } = this.props;
+    const config = {
+      ...editorConfig,
+      ckfinder: {
+        uploadUrl: config.uploadUrl,
+      },
+    }
+    ClassicEditor.create(this.editorRef.current, config)
       .then((editor) => {
         this.editor = editor;
 
-        if ( this.props.data ) {
-					this.editor.setData( this.props.data );
+        if ( data ) {
+					this.editor.setData( data );
 				}
 
 				const document = this.editor.model.document;
 
 				document.on( 'change:data', event => {
 					/* istanbul ignore else */
-					if ( this.props.onChange ) {
-						this.props.onChange( event, editor );
+					if ( onChange ) {
+						onChange( event, editor );
 					}
         });
       })
@@ -65,11 +72,17 @@ class ReactEditor extends PureComponent {
 
 ReactEditor.propTypes = {
   data: PropTypes.string,
+  config: PropTypes.shape({
+    uploadUrl: PropTypes.string,
+  }),
   onChange: PropTypes.func,
 };
 
 ReactEditor.defaultProps = {
   data: '',
+  config: {
+    uploadUrl: '',
+  },
 };
 
 export default ReactEditor;

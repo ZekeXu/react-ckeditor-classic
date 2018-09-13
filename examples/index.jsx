@@ -1,6 +1,6 @@
 import React from 'react';
 import { render} from 'react-dom';
-import ReactEditor from '../lib';
+import ReactEditor from '../src';
 const App = () => (
     <ReactEditor />
 );

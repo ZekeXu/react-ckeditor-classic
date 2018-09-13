@@ -14,7 +14,8 @@ yarn add react-ckeditor-classic
 import ReactEditor from 'react-ckeditor-classic';
 
 <ReactEditor
-  data={'Hello Editor!'}
+  data='Hello Editor!'
+  config={{uploadUrl: '/your/api/image/upload/url'}}
   onChange={e => console.log(e)}
 />
 ```
