@@ -27,13 +27,13 @@ class ReactEditor extends PureComponent {
 
   initializeEditor() {
     const { data, config, onChange } = this.props;
-    const config = {
+    const mergedConfig = {
       ...editorConfig,
       ckfinder: {
         uploadUrl: config.uploadUrl,
       },
-    }
-    ClassicEditor.create(this.editorRef.current, config)
+    };
+    ClassicEditor.create(this.editorRef.current, mergedConfig)
       .then((editor) => {
         this.editor = editor;
 
