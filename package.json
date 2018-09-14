@@ -1,7 +1,7 @@
 {
   "name": "react-ckeditor-classic",
-  "version": "1.0.0",
-  "description": "react ckeditor5",
+  "version": "1.1.0",
+  "description": "react ckeditor5 classic",
   "main": "lib/index.js",
   "module": "lib/index.js",
   "scripts": {
@@ -11,7 +11,7 @@
     "prepublishOnly": "npm run transpile"
   },
   "keywords": [
-    "react-ckeditor",
+    "react-ckeditor-classic",
     "react-editor",
     "editor",
     "ckeditor",
@@ -21,7 +21,7 @@
   "license": "LGPL-3.0",
   "files": [
     "lib",
-    "README.png"
+    "example.png"
   ],
   "peerDependencies": {
     "react": "^16.5.0",

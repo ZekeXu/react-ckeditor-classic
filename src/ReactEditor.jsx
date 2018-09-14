@@ -46,7 +46,7 @@ class ReactEditor extends PureComponent {
 				document.on( 'change:data', event => {
 					/* istanbul ignore else */
 					if ( onChange ) {
-						onChange( event, editor );
+						onChange( editor.getData(), editor, event );
 					}
         });
       })
