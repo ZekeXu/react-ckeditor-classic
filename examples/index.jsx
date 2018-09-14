@@ -4,7 +4,7 @@ import ReactEditor from '../src';
 const App = () => (
     <ReactEditor
         data="Hello ReactEditor"
-        onChange={v => console.warn(v)}
+        onChange={(data, editor, event) => console.warn(data, editor, event)}
         config={{
             uploadUrl: 'http://localhost:8080/auth/upload'
         }}
