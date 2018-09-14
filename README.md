@@ -4,7 +4,7 @@ react-ckeditor-classic
 
 ![react-ckeditor-classic](./example.png)
 
-## Usage
+## 1. Usage
 
 ```bash
 yarn add react-ckeditor-classic
@@ -20,7 +20,7 @@ import ReactEditor from 'react-ckeditor-classic';
 />
 ```
 
-## PublishLog
+## 2. PublishLog
 
 ```v1.1.0``` 20180914
 
@@ -30,7 +30,9 @@ feature: format onChange parameters
 
 feat: Publish first version
 
-## If you use Webpack, you should config ```webpack.config.js```
+## 3. Webpack configuration
+
+> If you use Webpack, you should config ```webpack.config.js```
 
 ```js
 
