@@ -41,6 +41,7 @@
       "prefer-promise-reject-errors": 0,
       "no-mixed-operators": 0,
       "react/no-danger": 0,
-      "import/no-extraneous-dependencies": 0
+      "import/no-extraneous-dependencies": 0,
+      "no-underscore-dangle": 0
   }
 }

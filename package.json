@@ -7,6 +7,8 @@
   "scripts": {
     "start": "webpack-dev-server --mode development --config webpack.dev.js --watch",
     "transpile": "rm -rf lib && babel src -d lib",
+    "lint": "eslint --ext .js --ext .jsx src/",
+    "format": "prettier src/**/*.js src/**/*.jsx --white && yarn run lint --fix",
     "test": "echo \"Error: no test specified\" && exit 1",
     "prepublishOnly": "npm run transpile"
   },
@@ -58,9 +60,11 @@
     "eslint": "^5.15.1",
     "eslint-config-airbnb": "^17.1.0",
     "eslint-plugin-import": "^2.16.0",
+    "eslint-plugin-jsx-a11y": "^6.2.1",
     "eslint-plugin-react": "^7.12.4",
     "html-webpack-plugin": "^3.2.0",
     "postcss-loader": "^3.0.0",
+    "prettier": "^1.16.4",
     "prop-types": "^15.7.2",
     "raw-loader": "^0.5.1",
     "react": "^16.8.4",

@@ -22,7 +22,18 @@ import ImageUploadPlugin from '@ckeditor/ckeditor5-image/src/imageupload';
 import CKFinderUploadAdapter from '@ckeditor/ckeditor5-adapter-ckfinder/src/uploadadapter';
 
 const editorConfig = {
-  plugins: [Essentials, Paragraph, Bold, Italic, Underline, Strikethrough, Link, Code, Heading, BlockQuote, List,
+  plugins: [
+    Essentials,
+    Paragraph,
+    Bold,
+    Italic,
+    Underline,
+    Strikethrough,
+    Link,
+    Code,
+    Heading,
+    BlockQuote,
+    List,
     ImagePlugin,
     ImageCaptionPlugin,
     ImageStylePlugin,
@@ -53,74 +64,74 @@ const editorConfig = {
   ],
   heading: {
     options: [{
-        model: 'paragraph',
-        title: 'Paragraph',
-        class: 'ck-heading_paragraph'
-      },
-      {
-        model: 'heading1',
-        view: 'h1',
-        title: 'Heading 1',
-        class: 'ck-heading_heading1'
-      },
-      {
-        model: 'heading2',
-        view: 'h2',
-        title: 'Heading 2',
-        class: 'ck-heading_heading2'
-      },
-      {
-        model: 'heading3',
-        view: 'h3',
-        title: 'Heading 3',
-        class: 'ck-heading_heading3'
-      },
-    ]
+      model: 'paragraph',
+      title: 'Paragraph',
+      class: 'ck-heading_paragraph',
+    },
+    {
+      model: 'heading1',
+      view: 'h1',
+      title: 'Heading 1',
+      class: 'ck-heading_heading1',
+    },
+    {
+      model: 'heading2',
+      view: 'h2',
+      title: 'Heading 2',
+      class: 'ck-heading_heading2',
+    },
+    {
+      model: 'heading3',
+      view: 'h3',
+      title: 'Heading 3',
+      class: 'ck-heading_heading3',
+    },
+    ],
   },
   highlight: {
     options: [{
-        model: 'yellowMarker',
-        class: 'marker-yellow',
-        title: 'Yellow Marker',
-        color: 'var(--ck-highlight-marker-yellow)',
-        type: 'marker'
-      },
-      {
-        model: 'greenMarker',
-        class: 'marker-green',
-        title: 'Green marker',
-        color: 'var(--ck-highlight-marker-green)',
-        type: 'marker'
-      },
-      {
-        model: 'pinkMarker',
-        class: 'marker-pink',
-        title: 'Pink marker',
-        color: 'var(--ck-highlight-marker-pink)',
-        type: 'marker'
-      },
-      {
-        model: 'blueMarker',
-        class: 'marker-blue',
-        title: 'Blue marker',
-        color: 'var(--ck-highlight-marker-blue)',
-        type: 'marker'
-      },
-      {
-        model: 'redPen',
-        class: 'pen-red',
-        title: 'Red pen',
-        color: 'var(--ck-highlight-pen-red)',
-        type: 'pen'
-      },
-      {
-        model: 'greenPen',
-        class: 'pen-green',
-        title: 'Green pen',
-        color: 'var(--ck-highlight-pen-green)',
-        type: 'pen'
-      }
-    ]
+      model: 'yellowMarker',
+      class: 'marker-yellow',
+      title: 'Yellow Marker',
+      color: 'var(--ck-highlight-marker-yellow)',
+      type: 'marker',
+    },
+    {
+      model: 'greenMarker',
+      class: 'marker-green',
+      title: 'Green marker',
+      color: 'var(--ck-highlight-marker-green)',
+      type: 'marker',
+    },
+    {
+      model: 'pinkMarker',
+      class: 'marker-pink',
+      title: 'Pink marker',
+      color: 'var(--ck-highlight-marker-pink)',
+      type: 'marker',
+    },
+    {
+      model: 'blueMarker',
+      class: 'marker-blue',
+      title: 'Blue marker',
+      color: 'var(--ck-highlight-marker-blue)',
+      type: 'marker',
+    },
+    {
+      model: 'redPen',
+      class: 'pen-red',
+      title: 'Red pen',
+      color: 'var(--ck-highlight-pen-red)',
+      type: 'pen',
+    },
+    {
+      model: 'greenPen',
+      class: 'pen-green',
+      title: 'Green pen',
+      color: 'var(--ck-highlight-pen-green)',
+      type: 'pen',
+    },
+    ],
   },
   image: {
     toolbar: [
@@ -129,7 +140,7 @@ const editorConfig = {
       'imageStyle:alignRight',
       // 'imageStyle:side',
       '|',
-      'imageTextAlternative'
+      'imageTextAlternative',
     ],
     styles: [
       'full',
@@ -138,8 +149,8 @@ const editorConfig = {
     ],
   },
   alignment: {
-    options: ['left', 'right', 'center', 'justify']
+    options: ['left', 'right', 'center', 'justify'],
   },
 };
 
-export default editorConfig
+export default editorConfig;

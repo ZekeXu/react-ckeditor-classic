@@ -16,10 +16,11 @@ class ReactEditor extends PureComponent {
   }
 
   componentDidUpdate() {
-		if ( this.editor && this.editor.getData() !== this.props.data ) {
-			this.editor.setData( this.props.data );
-		}
-	}
+    const { data } = this.props;
+    if (this.editor && this.editor.getData() !== data) {
+      this.editor.setData(data);
+    }
+  }
 
   componentWillUnmount() {
     this.destroyEditor();
@@ -37,20 +38,20 @@ class ReactEditor extends PureComponent {
       .then((editor) => {
         this.editor = editor;
 
-        if ( data ) {
-					this.editor.setData( data );
-				}
+        if (data) {
+          this.editor.setData(data);
+        }
 
-				const document = this.editor.model.document;
+        const { document } = this.editor.model;
 
-				document.on( 'change:data', event => {
-					/* istanbul ignore else */
-					if ( onChange ) {
-						onChange( editor.getData(), editor, event );
-					}
+        document.on('change:data', (event) => {
+          /* istanbul ignore else */
+          if (onChange) {
+            onChange(editor.getData(), editor, event);
+          }
         });
       })
-      .catch(error => {
+      .catch((error) => {
         console.error(error);
       });
   }
@@ -83,6 +84,7 @@ ReactEditor.defaultProps = {
   config: {
     uploadUrl: '',
   },
+  onChange: () => {},
 };
 
 export default ReactEditor;
