@@ -31,7 +31,10 @@ class ReactEditor extends PureComponent {
     const mergedConfig = {
       ...editorConfig,
       ckfinder: {
-        uploadUrl: config.uploadUrl,
+        uploadUrl: config.url,
+      },
+      uploadConfig: {
+        ...config,
       },
     };
     ClassicEditor.create(this.editorRef.current, mergedConfig)
@@ -74,7 +77,9 @@ class ReactEditor extends PureComponent {
 ReactEditor.propTypes = {
   data: PropTypes.string,
   config: PropTypes.shape({
-    uploadUrl: PropTypes.string,
+    url: PropTypes.string,
+    headers: PropTypes.shape(PropTypes.any),
+    fileName: PropTypes.string,
   }),
   onChange: PropTypes.func,
 };
@@ -82,7 +87,9 @@ ReactEditor.propTypes = {
 ReactEditor.defaultProps = {
   data: '',
   config: {
-    uploadUrl: '',
+    url: '',
+    headers: {},
+    fileName: 'file',
   },
   onChange: () => {},
 };

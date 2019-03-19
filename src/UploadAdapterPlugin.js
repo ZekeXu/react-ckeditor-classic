@@ -1,7 +1,13 @@
 class UploadAdapter {
-  constructor(loader) {
+  constructor(loader, options) {
     // The file loader instance to use during the upload.
     this.loader = loader;
+    this.options = {
+      url: '',
+      fileName: 'file',
+      headers: {},
+      ...options,
+    };
   }
 
   // Starts the upload process.
@@ -23,13 +29,17 @@ class UploadAdapter {
   // Initializes the XMLHttpRequest object using the URL passed to the constructor.
   _initRequest() {
     this.xhr = new XMLHttpRequest();
-    this.xhr.setRequestHeader('Authorization', 'authorization');
 
     // Note that your request may look different. It is up to you and your editor
     // integration to choose the right communication channel. This example uses
     // a POST request with JSON as a data structure but your configuration
     // could be different.
-    this.xhr.open('POST', 'http://example.com/image/upload/path', true);
+    const { url, headers } = this.options;
+    this.xhr.open('POST', url, true);
+    Object.keys(headers).forEach((key) => {
+      this.xhr.setRequestHeader(key, headers[key]);
+    });
+
     this.xhr.responseType = 'json';
   }
 
@@ -59,7 +69,7 @@ class UploadAdapter {
       // This URL will be used to display the image in the content. Learn more in the
       // UploadAdapter#upload documentation.
       return resolve({
-        default: response.url,
+        default: response.data,
       });
     });
 
@@ -83,7 +93,7 @@ class UploadAdapter {
         // Prepare the form data.
         const data = new FormData();
 
-        data.append('upload', file);
+        data.append(this.options.fileName, file);
 
         // Important note: This is the right place to implement security mechanisms
         // like authentication and CSRF protection. For instance, you can use
@@ -97,10 +107,12 @@ class UploadAdapter {
   }
 }
 
-export function UploadAdapterPlugin(editor) {
+export default function UploadAdapterPlugin(editor) {
+  const options = editor.config.get('uploadConfig');
+
   editor.plugins.get('FileRepository').createUploadAdapter = loader => (
     // Configure the URL to the upload script in your back-end here!
-    new UploadAdapter(loader)
+    new UploadAdapter(loader, options)
   );
 }
 

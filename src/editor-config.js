@@ -19,7 +19,8 @@ import ImageCaptionPlugin from '@ckeditor/ckeditor5-image/src/imagecaption';
 import ImageStylePlugin from '@ckeditor/ckeditor5-image/src/imagestyle';
 import ImageToolbarPlugin from '@ckeditor/ckeditor5-image/src/imagetoolbar';
 import ImageUploadPlugin from '@ckeditor/ckeditor5-image/src/imageupload';
-import CKFinderUploadAdapter from '@ckeditor/ckeditor5-adapter-ckfinder/src/uploadadapter';
+// import CKFinderUploadAdapter from '@ckeditor/ckeditor5-adapter-ckfinder/src/uploadadapter';
+import UploadAdapterPlugin from './UploadAdapterPlugin';
 
 const editorConfig = {
   plugins: [
@@ -39,7 +40,8 @@ const editorConfig = {
     ImageStylePlugin,
     ImageToolbarPlugin,
     ImageUploadPlugin,
-    CKFinderUploadAdapter,
+    // CKFinderUploadAdapter,
+    UploadAdapterPlugin,
     Alignment,
     Autoformat,
     Highlight,
