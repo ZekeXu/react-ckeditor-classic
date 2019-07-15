@@ -1,69 +1,69 @@
 const path = require('path');
-const HtmlWebpackPlugin = require("html-webpack-plugin");
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+
 const htmlWebpackPlugin = new HtmlWebpackPlugin({
-  template: path.join(__dirname, "examples/index.html"),
-  filename: "./index.html"
+  template: path.join(__dirname, 'examples/index.html'),
+  filename: './index.html',
 });
-const {
-  styles
-} = require('@ckeditor/ckeditor5-dev-utils');
+const { styles } = require('@ckeditor/ckeditor5-dev-utils');
 
 module.exports = {
   entry: {
-    index: ['babel-polyfill', path.join(__dirname, "examples/index.jsx")],
+    index: ['babel-polyfill', path.join(__dirname, 'examples/index.jsx')],
   },
   output: {
     path: path.resolve(__dirname, 'dist'),
   },
 
   module: {
-    rules: [{
+    rules: [
+      {
         test: /\.(js|jsx)$/,
-        use: "babel-loader",
-        exclude: /node_modules/
+        use: 'babel-loader',
+        exclude: /node_modules/,
       },
       {
         // Or /ckeditor5-[^/]+\/theme\/icons\/[^/]+\.svg$/ if you want to limit this loader
         // to CKEditor 5 icons only.
         test: /\.svg$/,
-
-        use: ['raw-loader']
+        use: ['raw-loader'],
       },
       {
         // Or /ckeditor5-[^/]+\/theme\/[^/]+\.css$/ if you want to limit this loader
         // to CKEditor 5 theme only.
         test: /\.css$/,
-        use: [{
+        use: [
+          {
             loader: 'style-loader',
             options: {
-              singleton: true
-            }
+              singleton: true,
+            },
           },
           {
             loader: 'postcss-loader',
             options: styles.getPostCssConfig({
               themeImporter: {
-                themePath: require.resolve('@ckeditor/ckeditor5-theme-lark')
+                themePath: require.resolve('@ckeditor/ckeditor5-theme-lark'),
               },
-              minify: true
-            })
+              minify: true,
+            }),
           },
-        ]
-      }
-    ]
+        ],
+      },
+    ],
   },
   plugins: [htmlWebpackPlugin],
   resolve: {
-    extensions: [".js", ".jsx"]
+    extensions: ['.js', '.jsx'],
   },
   devServer: {
-    port: 3030
+    port: 3030,
   },
   // Useful for debugging.
   devtool: 'source-map',
 
   // By default webpack logs warnings if the bundle is bigger than 200kb.
   performance: {
-    hints: false
-  }
+    hints: false,
+  },
 };
