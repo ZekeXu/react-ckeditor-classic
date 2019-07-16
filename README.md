@@ -1,5 +1,10 @@
 # react-ckeditor-classic
 
+![GitHub package.json version](https://img.shields.io/github/package-json/v/zekexu/react-ckeditor-classic.svg)
+![GitHub last commit](https://img.shields.io/github/last-commit/zekexu/react-ckeditor-classic.svg)
+[![Coverage Status](https://coveralls.io/repos/github/ZekeXu/react-ckeditor-classic/badge.svg?branch=master)](https://coveralls.io/github/ZekeXu/react-ckeditor-classic?branch=master)
+[![CircleCI](https://circleci.com/gh/ZekeXu/react-ckeditor-classic/tree/master.svg?style=svg)](https://circleci.com/gh/ZekeXu/react-ckeditor-classic/tree/master)
+
 react-ckeditor-classic
 
 ![react-ckeditor-classic](./example.png)
