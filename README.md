@@ -25,21 +25,9 @@ import ReactEditor from 'react-ckeditor-classic';
 />
 ```
 
-## 2. PublishLog
+## 2. Webpack Configuration
 
-```v1.1.0``` 20180914
-
-feature: format onChange parameters
-
-```v1.0.0``` 20180913
-
-feat: Publish first version
-
-## 3. Custom defination
-
-### (1). Webpack configuration
-
-> If you use Webpack, you should config ```webpack.config.js```
+> If you are useing Webpack, you should config ```webpack.config.js```
 
 ```js
 
@@ -125,3 +113,5 @@ optimization: {
 ```
 
 ## 3. LICENSE [LGPL-3.0](./LICENSE)
+
+💗Used by [honeymorning.com](https://www.honeymorning.com)
