@@ -11,7 +11,7 @@
     "lint": "eslint --ext .js --ext .jsx src/",
     "format": "prettier src/**/*.js src/**/*.jsx --white && yarn run lint --fix",
     "test": "jest",
-    "coverage": "jest --coverage && cat ./coverage/lcon.info | coveralls",
+    "coverage": "jest --coverage && cat ./coverage/lcov.info | coveralls",
     "prepublishOnly": "yarn build",
     "release": "standard-version"
   },

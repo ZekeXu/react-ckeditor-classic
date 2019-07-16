@@ -1,3 +1,5 @@
+const path = require('path');
+
 module.exports = {
   collectCoverageFrom: ['src/**/*.{js,jsx}'],
   testMatch: [
@@ -11,12 +13,20 @@ module.exports = {
     '^(?!.*\\.(js|jsx|css|scss|json)$)':
       '<rootDir>/config/jest/fileTransform.js',
   },
+  moduleNameMapper: {
+    '.*\\.(less|css)$': path.join(__dirname, 'config', 'jest', 'transform.js'),
+    '.*\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$': path.join(__dirname, 'config/jest', 'transform.js'),
+  },
   testPathIgnorePatterns: [
     '<rootDir>/node_modules/',
     '<rootDir>/config/',
     '<rootDir>/src/assets/',
     '<rootDir>/examples/',
     '<rootDir>/lib/',
+  ],
+  transformIgnorePatterns: [
+    'node_modules',
+    '/node_modules/(?!@ckeditor/ckeditor5-editor-classic).+\\.js$',
   ],
   moduleFileExtensions: ['js', 'json', 'jsx'],
   setupFilesAfterEnv: ['<rootDir>/config/jest/adapter.js'],
