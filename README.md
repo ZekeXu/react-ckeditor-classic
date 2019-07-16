@@ -30,7 +30,9 @@ feature: format onChange parameters
 
 feat: Publish first version
 
-## 3. Webpack configuration
+## 3. Custom defination
+
+### (1). Webpack configuration
 
 > If you use Webpack, you should config ```webpack.config.js```
 
@@ -88,6 +90,8 @@ module: {
 
 ```
 
+### recommend plugin
+
 > If you build for production you maybe should use [terser-webpack-plugin](https://github.com/webpack-contrib/terser-webpack-plugin) not [uglifyjs-webpack-plugin](https://github.com/webpack-contrib/uglifyjs-webpack-plugin)
 Because ```terser-webpack-plugin``` support ES6.
 
@@ -115,4 +119,4 @@ optimization: {
   },
 ```
 
-## LICENSE [LGPL-3.0](./LICENSE)
+## 3. LICENSE [LGPL-3.0](./LICENSE)
