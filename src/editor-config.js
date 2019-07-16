@@ -2,14 +2,19 @@ import Autoformat from '@ckeditor/ckeditor5-autoformat/src/autoformat';
 import Alignment from '@ckeditor/ckeditor5-alignment/src/alignment';
 import Essentials from '@ckeditor/ckeditor5-essentials/src/essentials';
 import Paragraph from '@ckeditor/ckeditor5-paragraph/src/paragraph';
+import Indent from '@ckeditor/ckeditor5-indent/src/indent';
 
 import Bold from '@ckeditor/ckeditor5-basic-styles/src/bold';
 import Italic from '@ckeditor/ckeditor5-basic-styles/src/italic';
 import Underline from '@ckeditor/ckeditor5-basic-styles/src/underline';
 import Strikethrough from '@ckeditor/ckeditor5-basic-styles/src/strikethrough';
 import Code from '@ckeditor/ckeditor5-basic-styles/src/code';
+import Subscript from '@ckeditor/ckeditor5-basic-styles/src/subscript';
+import Superscript from '@ckeditor/ckeditor5-basic-styles/src/superscript';
 import Link from '@ckeditor/ckeditor5-link/src/link';
-import Highlight from '@ckeditor/ckeditor5-highlight/src/highlight';
+import Font from '@ckeditor/ckeditor5-font/src/font';
+import Table from '@ckeditor/ckeditor5-table/src/table';
+import TableToolbar from '@ckeditor/ckeditor5-table/src/tabletoolbar';
 
 import List from '@ckeditor/ckeditor5-list/src/list';
 import BlockQuote from '@ckeditor/ckeditor5-block-quote/src/blockquote';
@@ -19,22 +24,29 @@ import ImageCaptionPlugin from '@ckeditor/ckeditor5-image/src/imagecaption';
 import ImageStylePlugin from '@ckeditor/ckeditor5-image/src/imagestyle';
 import ImageToolbarPlugin from '@ckeditor/ckeditor5-image/src/imagetoolbar';
 import ImageUploadPlugin from '@ckeditor/ckeditor5-image/src/imageupload';
+import RemoveFormat from '@ckeditor/ckeditor5-remove-format/src/removeformat';
 // import CKFinderUploadAdapter from '@ckeditor/ckeditor5-adapter-ckfinder/src/uploadadapter';
 import UploadAdapterPlugin from './UploadAdapterPlugin';
+
 
 const editorConfig = {
   plugins: [
     Essentials,
     Paragraph,
+    Indent,
     Bold,
     Italic,
     Underline,
     Strikethrough,
+    Subscript,
+    Superscript,
     Link,
     Code,
     Heading,
     BlockQuote,
     List,
+    Table,
+    TableToolbar,
     ImagePlugin,
     ImageCaptionPlugin,
     ImageStylePlugin,
@@ -44,25 +56,35 @@ const editorConfig = {
     UploadAdapterPlugin,
     Alignment,
     Autoformat,
-    Highlight,
+    Font,
+    RemoveFormat,
   ],
   toolbar: [
     'heading',
     '|',
+    'outdent',
+    'indent',
     'bold',
     'italic',
     'underline',
     'strikethrough',
-    'highlight',
+    'subscript',
+    'superscript',
+    'fontSize',
+    'fontFamily',
+    'fontColor',
+    'fontBackgroundColor',
     'alignment',
     'link',
     'code',
     'bulletedList',
     'numberedList',
+    'insertTable',
     'blockQuote',
     'undo',
     'redo',
     'imageUpload',
+    'removeFormat',
   ],
   heading: {
     options: [{
@@ -90,50 +112,43 @@ const editorConfig = {
     },
     ],
   },
-  highlight: {
-    options: [{
-      model: 'yellowMarker',
-      class: 'marker-yellow',
-      title: 'Yellow Marker',
-      color: 'var(--ck-highlight-marker-yellow)',
-      type: 'marker',
-    },
-    {
-      model: 'greenMarker',
-      class: 'marker-green',
-      title: 'Green marker',
-      color: 'var(--ck-highlight-marker-green)',
-      type: 'marker',
-    },
-    {
-      model: 'pinkMarker',
-      class: 'marker-pink',
-      title: 'Pink marker',
-      color: 'var(--ck-highlight-marker-pink)',
-      type: 'marker',
-    },
-    {
-      model: 'blueMarker',
-      class: 'marker-blue',
-      title: 'Blue marker',
-      color: 'var(--ck-highlight-marker-blue)',
-      type: 'marker',
-    },
-    {
-      model: 'redPen',
-      class: 'pen-red',
-      title: 'Red pen',
-      color: 'var(--ck-highlight-pen-red)',
-      type: 'pen',
-    },
-    {
-      model: 'greenPen',
-      class: 'pen-green',
-      title: 'Green pen',
-      color: 'var(--ck-highlight-pen-green)',
-      type: 'pen',
-    },
+  fontSize: {
+    options: [
+      10,
+      12,
+      14,
+      16,
+      18,
+      22,
+      24,
+      28,
+      32,
+      64,
     ],
+  },
+  fontFamily: {
+    options: [
+      'default',
+      'Arial, Helvetica, sans-serif',
+      'Courier New, Courier, monospace',
+      'Georgia, serif',
+      'Lucida Sans Unicode, Lucida Grande, sans-serif',
+      'Tahoma, Geneva, sans-serif',
+      'Times New Roman, Times, serif',
+      'Trebuchet MS, Helvetica, sans-serif',
+      'Verdana, Geneva, sans-serif',
+    ],
+  },
+  fontColor: {
+    columns: 6,
+    documentColors: 12,
+  },
+  fontBackgroundColor: {
+    columns: 6,
+    documentColors: 12,
+  },
+  table: {
+    contentToolbar: ['tableColumn', 'tableRow', 'mergeTableCells'],
   },
   image: {
     toolbar: [
@@ -152,6 +167,10 @@ const editorConfig = {
   },
   alignment: {
     options: ['left', 'right', 'center', 'justify'],
+  },
+  indentBlock: {
+    offset: 1,
+    unit: 'em',
   },
 };
 

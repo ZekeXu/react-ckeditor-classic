@@ -1,5 +1,10 @@
 # react-ckeditor-classic
 
+![GitHub package.json version](https://img.shields.io/github/package-json/v/zekexu/react-ckeditor-classic.svg)
+![GitHub last commit](https://img.shields.io/github/last-commit/zekexu/react-ckeditor-classic.svg)
+[![Coverage Status](https://coveralls.io/repos/github/ZekeXu/react-ckeditor-classic/badge.svg?branch=master)](https://coveralls.io/github/ZekeXu/react-ckeditor-classic?branch=master)
+[![CircleCI](https://circleci.com/gh/ZekeXu/react-ckeditor-classic/tree/master.svg?style=svg)](https://circleci.com/gh/ZekeXu/react-ckeditor-classic/tree/master)
+
 react-ckeditor-classic
 
 ![react-ckeditor-classic](./example.png)
@@ -30,7 +35,9 @@ feature: format onChange parameters
 
 feat: Publish first version
 
-## 3. Webpack configuration
+## 3. Custom defination
+
+### (1). Webpack configuration
 
 > If you use Webpack, you should config ```webpack.config.js```
 
@@ -88,6 +95,8 @@ module: {
 
 ```
 
+### recommend plugin
+
 > If you build for production you maybe should use [terser-webpack-plugin](https://github.com/webpack-contrib/terser-webpack-plugin) not [uglifyjs-webpack-plugin](https://github.com/webpack-contrib/uglifyjs-webpack-plugin)
 Because ```terser-webpack-plugin``` support ES6.
 
@@ -115,4 +124,4 @@ optimization: {
   },
 ```
 
-## LICENSE [LGPL-3.0](./LICENSE)
+## 3. LICENSE [LGPL-3.0](./LICENSE)
