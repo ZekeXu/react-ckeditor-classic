@@ -25,7 +25,6 @@ import ImageStylePlugin from '@ckeditor/ckeditor5-image/src/imagestyle';
 import ImageToolbarPlugin from '@ckeditor/ckeditor5-image/src/imagetoolbar';
 import ImageUploadPlugin from '@ckeditor/ckeditor5-image/src/imageupload';
 import RemoveFormat from '@ckeditor/ckeditor5-remove-format/src/removeformat';
-// import CKFinderUploadAdapter from '@ckeditor/ckeditor5-adapter-ckfinder/src/uploadadapter';
 import UploadAdapterPlugin from './UploadAdapterPlugin';
 
 
@@ -52,7 +51,6 @@ const editorConfig = {
     ImageStylePlugin,
     ImageToolbarPlugin,
     ImageUploadPlugin,
-    // CKFinderUploadAdapter,
     UploadAdapterPlugin,
     Alignment,
     Autoformat,
